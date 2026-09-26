@@ -1,4 +1,4 @@
-#Sliding window
+#Sliding window -> T.C: O(n)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l=0
@@ -11,28 +11,6 @@ class Solution:
             substr_set.add(s[r])
             max_substring_len= max(max_substring_len, r-l+1)
         return max_substring_len
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #My solution-1: T.C: o(n^2)
 # class Solution:

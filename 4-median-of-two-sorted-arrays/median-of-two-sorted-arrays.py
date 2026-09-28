@@ -16,11 +16,12 @@ class Solution:
             mid1 = (low+high)//2 #these many elements from n1 on the left block
             mid2 = left - mid1
 
-            if mid1>0:
-                l1=arr1[mid1-1]
-            else:
-                l1=float("-inf")
+            # if mid1>0:
+            #     l1=arr1[mid1-1]
+            # else:
+            #     l1=float("-inf")
             
+            l1=arr1[mid1-1] if mid1>0 else float("-inf")
             l2=arr2[mid2-1] if mid2>0 else float("-inf")
             
             r1=arr1[mid1] if mid1<n1 else float("inf")

@@ -30,7 +30,7 @@ class Solution:
             if(l1<=r2 and l2<=r1):
                 #success!
                 if(n%2==0):
-                    return ( max(l1,l2)+min(r1,r2) )/2.0
+                    return ( max(l1,l2)+min(r1,r2) )/2
                 else:
                     return max(l1,l2)
             elif l1>r2:
@@ -38,7 +38,7 @@ class Solution:
             elif l2>r1:
                 low=mid1+1
         
-        # return 0.0
+        return 0.0
 
 # #Online solution with explanation
 # class Solution:

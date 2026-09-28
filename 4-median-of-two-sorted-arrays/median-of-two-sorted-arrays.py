@@ -33,11 +33,10 @@ class Solution:
                     return ( max(l1,l2)+min(r1,r2) )/2.0
                 else:
                     return max(l1,l2)
-            else:
-                if l1>r2:
-                    high=mid1-1
-                if l2>r1:
-                    low=mid1+1
+            elif l1>r2:
+                high=mid1-1
+            elif l2>r1:
+                low=mid1+1
         
         return 0.0
 

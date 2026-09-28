@@ -38,7 +38,7 @@ class Solution:
             elif l2>r1:
                 low=mid1+1
         
-        return 0.0
+        # return 0.0
 
 # #Online solution with explanation
 # class Solution:

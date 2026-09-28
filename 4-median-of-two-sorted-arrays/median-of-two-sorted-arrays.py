@@ -1,5 +1,63 @@
-class Solution:
+#Answer
 
+class Solution:
+    def findMedianSortedArrays(self, arr1: list[int], arr2: list[int])->float:
+        n1 = len(arr1)
+        n2 = len(arr2)
+        n=n1+n2
+
+        if n1>n2:
+            return self.findMedianSortedArrays(arr2, arr1)
+        
+        low = 0 #0 elements
+        high = n1 
+
+        left = (n1+n2+1)//2
+
+        while low<=high:
+            mid1 = (low+high)//2 #these many elements from n1 on the left block
+            mid2 = left - mid1
+
+            if mid1>0:
+                l1=arr1[mid1-1]
+            else:
+                l1=float("-inf")
+            
+            l2=arr2[mid2-1] if mid2>0 else float("-inf")
+            
+            r1=arr1[mid1] if mid1>0 else float("inf")
+            r2=arr2[mid2] if mid2>0 else float("inf")
+
+            if(l1<=r2 and l2<=r1):
+                #success!
+                if(n%2==0):
+                    return ( max(l1,l2)+min(r1,r2) )/2
+                else:
+                    return max(l1,l2)
+            else:
+                if l1>r2:
+                    high[mid1-1]
+                if l2>r1:
+                    low[mid1+1]
+            return 0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Answer
+class Solution:
     def findMedianSortedArrays(self, arr1: list[int], arr2: list[int]) -> float:
 
         # MEDIAN 

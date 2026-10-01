@@ -1,3 +1,36 @@
+#Solution:
+class Solution:
+    def convert(self, s:str, numRows: int) -> str:
+            rows=[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#My solution:
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         lists= [ [] for _ in range(numRows) ]

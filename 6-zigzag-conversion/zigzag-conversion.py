@@ -1,7 +1,27 @@
 #Solution:
 class Solution:
     def convert(self, s:str, numRows: int) -> str:
-            rows=[]
+
+            if numRows==1:
+                return s
+            rows=[[] for _ in range(numRows) ]
+            i=0
+            d=1
+
+            for c in s:
+                rows[i].append(c)
+                if(i==0):
+                    d=1
+                if(i==numRows-1):
+                    d=-1
+                i+=d
+
+            output=""
+            for idx in range(rows):
+                output+=rows[idx].join()
+            
+            return output
+
 
 
 

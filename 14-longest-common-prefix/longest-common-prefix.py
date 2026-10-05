@@ -45,6 +45,7 @@ class Solution:
                     return s[:i]
             i+=1
         return s[:i]
+        
                         
 
         

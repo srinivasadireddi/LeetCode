@@ -1,3 +1,6 @@
+#TC: O(n)
+#SC: O(N)
+
 class Solution:
     def isValid(self, s: str) -> bool:
         hashMap={ ')':'(', ']':'[','}':'{' }

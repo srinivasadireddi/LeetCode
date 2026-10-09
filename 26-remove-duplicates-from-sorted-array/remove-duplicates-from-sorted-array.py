@@ -12,7 +12,7 @@ class Solution:
 # SC:O(1) #cuz we store only i and j
 
 
-
+#My first attempt
         # k=0
         # encounter=[]
         # for i in range(len(nums)):

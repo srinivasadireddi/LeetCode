@@ -7,8 +7,9 @@ class Solution:
                 nums[j]=nums[i]
                 j+=1
         return j #last value of j is exactly equal to number of unique elements
-        
 
+# TC:O(N)
+# SC:O(1) #cuz we store only i and j
 
 
 

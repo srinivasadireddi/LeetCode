@@ -35,11 +35,11 @@ class Solution:
         
         # return output
 
-#modified ans
-#My ans
+#modified ans of my ans
+
         #TC:O(n): good
-        #SC:O(n): can be made to O(1) by creating the output number on the fly
-    
+        #SC:O(1)
+
         final_int=0
         i=0
         sign=1

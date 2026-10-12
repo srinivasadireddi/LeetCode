@@ -14,6 +14,6 @@ class Solution:
                 return (i-count_i)
         return -1
 
-#T:O(n) or O(n*m)?
+#T:O(n*m)
 #S:O(1)
         

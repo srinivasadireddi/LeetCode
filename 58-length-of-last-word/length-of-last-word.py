@@ -11,3 +11,5 @@ class Solution:
             count+=1
             r-=1
         return count
+#t:o(n)
+#S:o(1)

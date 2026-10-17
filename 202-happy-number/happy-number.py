@@ -23,24 +23,45 @@
 # #TC:O(log(n))
 # #S:O(log(n))
 
-#Solution 2
+# #Solution 2
+# class Solution:
+#     def isHappy(self, n: int) -> bool:
+#         # set={}#this is dict!
+#         sett=set()
+#         sett.add(n)
+#         while(n!=1):
+#             str_n=str(n)
+#             n= sum(int(i)**2 for i in str_n)
+#             # if(sum_squares==1):
+#             #     return True
+#             # else:
+#             #     n=sum_squares
+#             if(n in sett):
+#                 return False
+#             else:
+#                 # n=sum_squares
+#                 sett.add(n)
+#         return True
+# #T:o(log(n))
+# #S:o(log(n))
+
+#Solution 1:
 class Solution:
-    def isHappy(self, n: int) -> bool:
-        # set={}#this is dict!
-        sett=set()
-        sett.add(n)
-        while(n!=1):
-            str_n=str(n)
-            n= sum(int(i)**2 for i in str_n)
-            # if(sum_squares==1):
-            #     return True
-            # else:
-            #     n=sum_squares
-            if(n in sett):
+    def isHappy(self, n:int)->bool:
+        def get_next(ptr):
+            str_ptr=str(ptr)
+            ptr= sum(int(i)**2 for i in str_ptr)
+            return ptr
+
+        fast=n
+        slow=n
+        
+        while(fast!=1):
+            slow=get_next(slow)
+            fast=get_next(fast)
+            fast=get_next(fast)
+            if(slow==fast and fast!=1):
                 return False
-            else:
-                # n=sum_squares
-                sett.add(n)
         return True
-#T:o(log(n))
-#S:o(log(n))
+#T:O(logn)
+#S:o(1)

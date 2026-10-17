@@ -31,15 +31,15 @@ class Solution:
         sett.add(n)
         while(n!=1):
             str_n=str(n)
-            sum_squares= sum(int(i)**2 for i in str_n)
+            n= sum(int(i)**2 for i in str_n)
             # if(sum_squares==1):
             #     return True
             # else:
             #     n=sum_squares
-            if(sum_squares in sett):
+            if(n in sett):
                 return False
             else:
-                n=sum_squares
+                # n=sum_squares
                 sett.add(n)
         return True
 #T:o(log(n))

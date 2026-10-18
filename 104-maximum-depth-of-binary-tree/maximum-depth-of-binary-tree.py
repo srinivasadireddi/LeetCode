@@ -13,4 +13,7 @@ class Solution:
         right=self.maxDepth(root.right)
         return 1+max(left,right)
 #TC:O(n)
-#SC:O(h) cuz 
+#SC:O(h) cuz call stack stores up to h recursive function calls
+#note:
+#Balanced binary tree: h=O(log(n))
+#Skewed tree: h=O(n)

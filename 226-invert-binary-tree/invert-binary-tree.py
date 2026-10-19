@@ -14,4 +14,5 @@ class Solution:
         root.left=root_right_original
 
         return root
-        
+# T:O(N)
+# S:O(h) #recursive call stack

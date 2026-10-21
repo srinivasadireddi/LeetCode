@@ -17,7 +17,8 @@ class Solution:
         string_small= preorder(subRoot)          
         string_big= preorder(root)
         return string_small in string_big
-# TC=O(n) if python's string_small in string_big search is optimum or O(nm) if it does brute force like search
+
+# TC=O(n) if python's string_small in string_big search is optimum or O(nm) if it does brute force like search in worst case
 # SC=O(n) 
 
 

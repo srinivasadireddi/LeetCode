@@ -16,7 +16,8 @@ class KthLargest(object):
         #     heapq.heappop(self.nums)
         # The smallest element in the heap is now the k-th largest element
         return self.nums[0]
-
+#TC:O(nlogn)..
+#SC:O(1)..
 
 # class KthLargest(object):
 

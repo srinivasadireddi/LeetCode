@@ -1,8 +1,6 @@
 # class Solution:
 #     def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
 
-#TC: O(n*m)
-#SC: O(n*m)
 class Solution(object):
     def fill(self, image, sr, sc, color, cur):
         # If sr is less than 0 or greater equals to the length of image...
@@ -23,3 +21,7 @@ class Solution(object):
         # Run the fill function starting at the position given...
         self.fill(image, sr, sc, color, image[sr][sc]);
         return image;
+
+
+#TC: O(n*m)
+#SC: O(n*m)

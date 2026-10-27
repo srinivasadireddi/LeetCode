@@ -23,3 +23,4 @@ class Solution:
                     dfs(i, j)
         
         return num_islands
+#TC:

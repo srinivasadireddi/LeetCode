@@ -1,5 +1,26 @@
+# #active recall
 # class Solution:
-#     def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
+#     #helper function
+#     def dfs(self, image, m, n, orig_color, new_color):
+#         if(m<0 or n<0 or m>len(image) or n> len(image[0])):
+#             return
+#         if (image[m][n]!=orig_color):
+#             return
+#         # if (image[m][n]==new_color):
+#         #     return ##why list index still out of range?
+        
+#         image[m][n]=new_color
+#         self.dfs(image, m-1, n, orig_color, new_color)
+#         self.dfs(image, m+1, n, orig_color, new_color)
+#         self.dfs(image, m, n-1, orig_color, new_color)
+#         self.dfs(image, m, n+1, orig_color, new_color)
+
+    # def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
+    #     if (image[sr][sc]==color):
+    #         return 
+    #     self.dfs(image, sr, sc, image[sr][sc], color)
+    #     return image
+
 
 class Solution(object):
     def fill(self, image, sr, sc, color, cur):
@@ -22,6 +43,3 @@ class Solution(object):
         self.fill(image, sr, sc, color, image[sr][sc]);
         return image;
 
-
-#TC: O(n*m)
-#SC: O(n*m)

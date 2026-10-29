@@ -21,8 +21,8 @@ class Solution:
         
         visited = set()
         return dfs(source, visited)
-#TC:
-#SC:
+#TC:o(n+e)
+#SC:O(N+E)
 
 # #alternate solution (not optimal)
 # class Solution(object):

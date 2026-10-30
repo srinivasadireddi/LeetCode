@@ -22,7 +22,7 @@ class Solution:
         visited = set()
         return dfs(source, visited)
 #TC:o(n+e) #no of edges+no of nodes
-#SC:O(N+E)
+#SC:O(N+E) #no of edges+no of nodes
 
 # #alternate solution (not optimal)
 # class Solution(object):

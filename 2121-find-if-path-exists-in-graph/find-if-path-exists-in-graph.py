@@ -1,6 +1,37 @@
-#three methods
-#mtd 1: DFS w recursion
+# #three methods
+# #mtd 1: DFS w recursion
 
+# class Solution:
+#     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
+#             #base case
+#             if (source==destination):
+#                 return True
+            
+#             #create a dictionary for graph
+#             graph= defaultdict(list)
+
+#             for u,v in edges:
+#                 graph[u].append(v)
+#                 graph[v].append(u)
+            
+#             #avoid infinite loop
+#             seen= set()
+#             seen.add(source)
+
+#             #helper function
+#             def dfs(i):
+#                 if i==destination:
+#                     return True
+#                 for nei_node in graph[i]:
+#                     if nei_node not in seen:
+#                         seen.add(nei_node)
+#                         if dfs(nei_node):
+#                             return True
+#                 return False
+            
+#             return dfs(source)
+
+#mtd2: dfs with stack
 class Solution:
     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
             #base case
@@ -16,78 +47,17 @@ class Solution:
             
             #avoid infinite loop
             seen= set()
-            seen.add(source)
+            seen.add(source)    
 
-            #helper function
-            def dfs(i):
-                if i==destination:
+            #stack
+            stack=[source]
+            while stack:
+                node=stack.pop() #pops most recent node
+                if node==destination:
                     return True
-                for nei_node in graph[i]:
+                for nei_node in graph[node]:
                     if nei_node not in seen:
                         seen.add(nei_node)
-                        if dfs(nei_node):
-                            return True
-                return False
-            
-            return dfs(source)
+                        stack.append(nei_node)
+            return False    
 
-
-
-# #Solution
-# class Solution:
-#     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-#         graph = collections.defaultdict(list)
-#         for u, v in edges:
-#             graph[u].append(v)
-#             graph[v].append(u)
-        
-#         def dfs(node, visited):
-#             if node == destination:
-#                 return True
-#             visited.add(node)
-#             for neighbor in graph[node]:
-#                 if neighbor not in visited:
-#                     if dfs(neighbor, visited):
-#                         return True
-#             return False
-        
-#         visited = set()
-#         return dfs(source, visited)
-#TC:o(n+e) #no of edges+no of nodes
-#SC:O(N+E) #no of edges+no of nodes
-
-# #alternate solution (not optimal)
-# class Solution(object):
-#     def validPath(self, n, edges, start, end):
-#         """
-#         :type n: int
-#         :type edges: List[List[int]]
-#         :type start: int
-#         :type end: int
-#         :rtype: bool
-#         """
-#         visited = [False]*n
-#         d = {}
-# 		#store the undirected edges for both vertices
-#         for i in edges:
-#             if i[0] in d:
-#                 d[i[0]].append(i[1])
-#             else:
-#                 d[i[0]] = [i[1]]
-                
-#             if i[1] in d:
-#                 d[i[1]].append(i[0])
-#             else:
-#                 d[i[1]] = [i[0]]
-#         #create a queue as we will apply BFS
-#         q = [start]
-#         while q:
-#             curr = q.pop(0)  #pop the first element as we do in queue
-#             if curr == end:  #if its the end then we can return True
-#                 return True
-#             elif curr in d and not visited[curr]: #else if it is not the end then check whether its visited or not
-#                 q.extend(d[curr])  #add the adjacent vertices of the current node to the queue
-#             visited[curr] = True  #mark this curr vertex as visited = True, so that we dont visit this vertex again
-#         return False  #return False if the queue gets empty and we dont reach the end
-# #tc
-# #sc

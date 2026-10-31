@@ -1,26 +1,58 @@
-# class Solution:
-#     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
+#three methods
+#mtd 1: DFS w recursion
 
-#Solution
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        graph = collections.defaultdict(list)
-        for u, v in edges:
-            graph[u].append(v)
-            graph[v].append(u)
-        
-        def dfs(node, visited):
-            if node == destination:
+    def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
+            #base case
+            if (source==destination):
                 return True
-            visited.add(node)
-            for neighbor in graph[node]:
-                if neighbor not in visited:
-                    if dfs(neighbor, visited):
-                        return True
-            return False
+            
+            #create a dictionary for graph
+            graph= defaultdict(list)
+
+            for u,v in edges:
+                graph[u].append(v)
+                graph[v].append(u)
+            
+            #avoid infinite loop
+            seen= set()
+            seen.add(source)
+
+            #helper function
+            def dfs(i):
+                if i==destination:
+                    return True
+                for nei_node in graph[i]:
+                    if nei_node not in seen:
+                        seen.add(nei_node)
+                        if dfs(nei_node):
+                            return True
+                return False
+            
+            return dfs(source)
+
+
+
+# #Solution
+# class Solution:
+#     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+#         graph = collections.defaultdict(list)
+#         for u, v in edges:
+#             graph[u].append(v)
+#             graph[v].append(u)
         
-        visited = set()
-        return dfs(source, visited)
+#         def dfs(node, visited):
+#             if node == destination:
+#                 return True
+#             visited.add(node)
+#             for neighbor in graph[node]:
+#                 if neighbor not in visited:
+#                     if dfs(neighbor, visited):
+#                         return True
+#             return False
+        
+#         visited = set()
+#         return dfs(source, visited)
 #TC:o(n+e) #no of edges+no of nodes
 #SC:O(N+E) #no of edges+no of nodes
 

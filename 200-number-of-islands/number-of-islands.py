@@ -16,12 +16,12 @@ class Solution:
                 dfs(i, j-1)
                 dfs(i, j+1)
         
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if(grid[i][j]=='1'):
-                    # grid[i][j]=='0' #redundant
+        for m in range(len(grid)):
+            for n in range(len(grid[0])):
+                if(grid[m][n]=='1'):
+                    # grid[m][n]=='0' #redundant
                     islands+=1
-                    dfs(i,j)
+                    dfs(m,n)
 
         return islands             
    

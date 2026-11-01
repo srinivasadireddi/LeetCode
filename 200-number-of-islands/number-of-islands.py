@@ -5,9 +5,10 @@ class Solution:
         
         islands=0
         
+        # def dfs(grid[i,j]): #this format is not supported
         def dfs(i,j):
             #edge cases
-            if(i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j]=='0'):
+            if(i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j]=='0'): #dont forget 0 and 1s are "strings"
                 return
             else:
                 grid[i][j]='0'
@@ -24,5 +25,8 @@ class Solution:
                     dfs(m,n)
 
         return islands             
-   
+
+#TC:o(m*n)
+#SC:o(m*n) 
+#reason: see notes
 

@@ -38,3 +38,5 @@ class Solution:
 
         return o_to_n[start]
 
+#TC: O(V+E)
+#SC: O(V)

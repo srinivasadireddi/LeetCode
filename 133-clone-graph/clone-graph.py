@@ -21,7 +21,6 @@ class Solution:
         stk = [start]
         visited = set()
         visited.add(start)
-
         while stk:
             node = stk.pop()
             o_to_n[node] = Node(val=node.val)

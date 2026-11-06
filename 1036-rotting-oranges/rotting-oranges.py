@@ -36,3 +36,5 @@ class Solution:
         if countFreshOrange == 0:
             return minutes
         return -1
+
+#TC: 

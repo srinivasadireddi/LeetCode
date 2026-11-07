@@ -6,36 +6,29 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 """
 
-# from typing import Optional
-# class Solution:
-#     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-        
 from typing import Optional
 class Solution:
-    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         if not node:
             return None
-
-        start = node
-        o_to_n = {}
-        stk = [start]
-        visited = set()
+        start=node
+        stack=[start] #we'll do dfs
+        old_to_new={}
+        visited= set() #redundant (we can identify visited nodes using the dict) but nice to have it
         visited.add(start)
-        while stk:
-            node = stk.pop()
-            o_to_n[node] = Node(val=node.val)
+
+        while stack:
+            node=stack.pop()
+            old_to_new[node]=Node(val=node.val)
 
             for nei in node.neighbors:
                 if nei not in visited:
                     visited.add(nei)
-                    stk.append(nei)
-
-        for old_node, new_node in o_to_n.items():
+                    stack.append(nei)
+        
+        for old_node, new_node in old_to_new.items():
             for nei in old_node.neighbors:
-                new_nei = o_to_n[nei]
+                new_nei=old_to_new[nei]
                 new_node.neighbors.append(new_nei)
-
-        return o_to_n[start]
-
-#TC: O(V+E)
-#SC: O(V)
+        
+        return old_to_new[start]

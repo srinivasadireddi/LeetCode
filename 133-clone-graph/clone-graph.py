@@ -32,3 +32,5 @@ class Solution:
                 new_node.neighbors.append(new_nei)
         
         return old_to_new[start]
+#TC:O(V+E) #V cuz stack's worst case is V and E cuz we see neighbors
+#SC:O(V)

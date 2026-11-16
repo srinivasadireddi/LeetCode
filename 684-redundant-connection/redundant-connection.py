@@ -18,3 +18,5 @@ class Solution:
  
             root[root2] = root1 # found new connection between nodes / subtrees
             # root[root1] = root2 also works            
+#TC: O(E.log(V))
+#SC: O(V)

@@ -1,9 +1,10 @@
 #active recall
+#Dijkstra's algorithm
 import heapq
 class Solution:
     def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
         graph=defaultdict(list) #list is the datatype
-        for u,v,time in times:
+        for u,v,time in times: #every edge
             graph[u].append((v,time))
         min_times={} #node: dist of the node from the source node
         min_heap=[(0,k)] #(dist of the node from the source node, node)

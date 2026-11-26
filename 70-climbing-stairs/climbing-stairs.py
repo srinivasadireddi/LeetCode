@@ -7,17 +7,17 @@ class Solution:
             return 2
         
         return self.climbStairs(n-2) + self.climbStairs(n-1)
-        # Time: O(2^n)
+        # Time: O(2^n) -> time limit exceeded
         # Space: O(n)
 
 
-# Top Down Memoization
+# Top Down Memorization
 class Solution:
     def climbStairs(self, n: int) -> int:
-        memo = {1:1, 2:2}
+        memo = {1:1, 2:2} #cache
         def f(n):
-            if n in memo:
-                return memo[n]
+            if n in memo: 
+                return memo[n] #takes O(1) time
             else:
                 memo[n] = f(n-2) + f(n-1)
                 return memo[n]
@@ -35,8 +35,8 @@ class Solution:
         if n == 2:
             return 2
         
-        dp = [0] * n
-        dp[0] = 1
+        dp = [0] * n #dp is a table/array
+        dp[0] = 1 #0-idxing
         dp[1] = 2
 
         for i in range(2, n):
